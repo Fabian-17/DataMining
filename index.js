@@ -1,5 +1,4 @@
 import express from 'express';
-import bodyParser from 'body-parser';
 import { fileURLToPath } from 'url';
 import path from 'path';
 
@@ -10,7 +9,6 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 app.use(express.json());
-// app.use(bodyParser.json());
 
 // Configurar el motor de vistas EJS
 app.set('view engine', 'ejs');
