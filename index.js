@@ -15,12 +15,12 @@ app.use(express.json());
 // Configurar el motor de vistas EJS
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'view'));
-app.use(express.static(path.join(__dirname, 'src/public')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 
 app.get('/', (req, res) => {
     // Renderizar el archivo HTML utilizando EJS
-    res.sendFile(__dirname+'/src/view/index.html');
+    res.sendFile(__dirname+'/view/index.html');
 });
 
 app.listen(port, () => {
