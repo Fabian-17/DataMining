@@ -15,6 +15,33 @@
             <div class="col-md-6">
                 <h2 class="text-center btn-success font-weight-bold">Formulario - Cadena Software</h2>
                 <form class="text-center">
+
+                    <div class="form-group">
+                        <label for="edad" class="text-warning">¿Cuál es tu Edad?</label>
+                        <input type="text" class="form-control" id="edad" placeholder="Ingrese su Edad" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="generos" class="text-warning">¿Con qué genero te identificas?</label>
+                        <select class="form-control" name="generos" id="generos">
+                            <option value="" hidden disabled-selected>Seleccione su Respuesta</option>
+                            <option value="opcion1">Masculino</option>
+                            <option value="opcion2">Femenino</option>
+                            <option value="opcion3">Otro</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="estudios" class="text-warning">¿Cuál es tu Nivel de Estudio?</label>
+                        <select class="form-control" name="estudios" id="estudios">
+                            <option value="" hidden disabled-selected>Seleccione su Respuesta</option>
+                            <option value="opcion1">Primaria</option>
+                            <option value="opcion2">Secundaria</option>
+                            <option value="opcion3">Terciaria</option>
+                            <option value="opcion2">Universidad</option>
+                        </select>
+                    </div>
+
                     <div class="form-group">
                         <label for="artista" class="text-warning">¿Qué artista sueles escuchar más seguido?</label>
                         <select class="form-control" id="artista" required>
@@ -26,6 +53,7 @@
                             <option value="opcion3">Shakira</option>
                         </select>
                     </div>
+
                     <div class="form-group">
                         <label for="genero" class="text-warning">¿Cuál es tu género musical preferido?</label>
                         <select class="form-control" id="genero" required>
@@ -37,21 +65,25 @@
                             <option value="opcion3">Rock</option>
                         </select>
                     </div>
+
                     <div class="form-group">
-                        <label for="mejoras" class="text-warning">¿Cuál de estas opciones crees que podrían mejorar tu experiencia?</label>                    
-                            <select class="form-control" id="genero" required>
-                                <option value="" hidden disabled-selected>Seleccione su Respuesta</option>
-                                <option value="opcion1">Preguntas y Respuestas en vivo</option>
-                                <option value="opcion2">Entrevistas semanales</option>
-                                <option value="opcion3">Música en vivo</option>
-                                <option value="opcion2">Sorteos y Encuestas</option>
-                                <option value="opcion3">Salutaciones</option>
-                                <option value="opcion3">Noticias musicales</option>
-                                
-                            </select>
+                        <label for="mejoras" class="text-warning">¿Cuál de estas opciones crees que podrían mejorar tu
+                            experiencia?</label>
+                        <select class="form-control" id="genero" required>
+                            <option value="" hidden disabled-selected>Seleccione su Respuesta</option>
+                            <option value="opcion1">Preguntas y Respuestas en vivo</option>
+                            <option value="opcion2">Entrevistas semanales</option>
+                            <option value="opcion3">Música en vivo</option>
+                            <option value="opcion2">Sorteos y Encuestas</option>
+                            <option value="opcion3">Salutaciones</option>
+                            <option value="opcion3">Noticias musicales</option>
+
+                        </select>
                     </div>
+
                     <div class="form-group">
-                        <label for="momentos" class="text-warning">¿Qué género musical prefieres escuchar mientras realizas tus tareas del día?</label>
+                        <label for="momentos" class="text-warning">¿Qué género musical prefieres escuchar mientras
+                            realizas tus tareas del día?</label>
                         <select class="form-control" id="genero" required>
                             <option value="" hidden disabled-selected>Seleccione su Respuesta</option>
                             <option value="opcion1">Reggaeton</option>
@@ -61,6 +93,7 @@
                             <option value="opcion3">Rock-Nacional</option>
                         </select>
                     </div>
+
                     <div class="form-group">
                         <label for="horarios" class="text-warning">¿En qué horarios o momentos del día sueles escuchar
                             la radio con más frecuencia?</label>
@@ -71,6 +104,7 @@
                             <option value="opcion3">Noche</option>
                         </select>
                     </div>
+
                     <div class="form-group">
                         <label for="frecuencia" class="text-warning">¿Escuchas la radio diariamente, semanalmente,
                             raramente o varias veces a la semana?</label>
@@ -81,6 +115,7 @@
                             <option value="opcion3">Varias veces a la semana</option>
                         </select>
                     </div>
+                    
                     <div class="form-group">
                         <label for="sugerencias" class="text-warning">¿Tienes alguna sugerencia para crear playlists
                             temáticas que hagan que la experiencia sea más emocionante?</label>
@@ -96,7 +131,9 @@
     </div>
 
     <footer class="text-center">Radio Cadena Software - CopyRight 2023 ©</footer>
-    
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 
