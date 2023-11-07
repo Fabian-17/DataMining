@@ -15,14 +15,17 @@ export const Genero = sequelize.define('genero', {
   
   export const Encuesta = sequelize.define('encuesta', {
     // Otros atributos de la encuesta
+    edad: DataTypes.INTEGER,
   });
   
   export const Pregunta = sequelize.define('pregunta', {
     // Otros atributos de la pregunta
+    texto: DataTypes.STRING,
   });
   
   export const Respuesta = sequelize.define('respuesta', {
     // Otros atributos de la respuesta
+    texto: DataTypes.STRING,
   });
   
   export const RespuestaEncuesta = sequelize.define('respuesta_encuesta', {
