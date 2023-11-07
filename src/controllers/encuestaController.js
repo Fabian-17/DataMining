@@ -1,55 +1,48 @@
-import { Genero, Localidad, NivelEstudio, Encuesta, Pregunta, Respuesta, RespuestaEncuesta } from '../models/model.js';
+import { Genero, Localidad, NivelEstudio, Encuesta, Pregunta, Respuesta } from '../models/model.js';
 
-export const obtenerEncuestas = async (req, res) => {
-    try {
-        const encuestas = await Encuesta.findAll({
-          include: [
-            {
-              model: Respuesta,
-              include: Pregunta,
-            },
-          ],
-        });
-        res.json(encuestas);
-      } catch (error) {
-        console.error('Error al obtener encuestas:', error);
-        res.status(500).send('Error interno del servidor');
-      }
-};
+export async function guardarRespuestas(req, res) {
+  try {
+    const {
+      edad,
+      genero,
+      localidades,
+      estudios,
+      artista,
+      mejoras,
+      generoMusical,  // Corregir el nombre de la variable
+      horarios,
+      frecuencia,
+      sugerencias,
+    } = req.body;
 
-// se pude hacer de las siguientes 2 maneras
+    const encuesta = await Encuesta.create({ edad });
 
-// export const crearEncuesta = async (req, res) => {
-//   try {
-//     const nuevaEncuesta = await Encuesta.create(req.body);
-//     res.status(201).json(nuevaEncuesta);
-//   } catch (error) {
-//     console.error('Error al crear una nueva encuesta:', error);
-//     res.status(500).send('Error interno del servidor');
-//   }
-// };
+    // Para las entidades Genero, Localidad y NivelEstudio, primero debes buscar si ya existen en la base de datos y luego asociarlas con la encuesta
+    const generoInstance = await Genero.findOrCreate({ where: { nombre: genero } });
+    const localidadInstance = await Localidad.findOrCreate({ where: { nombre: localidades } });
+    const nivelEstudioInstance = await NivelEstudio.findOrCreate({ where: { nombre: estudios } });
 
-export const crearEncuesta = async (req, res) => {
-    try {
-      const { edad, generos, estudios, artista, genero, mejoras, momentos, horarios, frecuencia, sugerencias } = req.body;
-  
-      const nuevaEncuesta = await Encuesta.create({
-        edad,
-        generos,
-        estudios,
-        artista,
-        genero,
-        mejoras,
-        momentos,
-        horarios,
-        frecuencia,
-        sugerencias,
-      });
-  
-      res.status(201).json(nuevaEncuesta);
-    } catch (error) {
-      console.error('Error al crear una nueva encuesta:', error);
-      res.status(500).send('Error interno del servidor');
-    }
-  };
-  
+    // Crear una respuesta con los valores adecuados
+    const respuesta = await Respuesta.create({
+      1: artista,
+      2: generoMusical,
+      3: mejoras,
+      4: horarios,  // Corregir el número de propiedad
+      5: frecuencia,
+      6: sugerencias,
+    });
+
+    // Asociar las instancias de Genero, Localidad y NivelEstudio con la encuesta
+    await encuesta.setGenero(generoInstance[0]);
+    await encuesta.setLocalidad(localidadInstance[0]);
+    await encuesta.setNivelEstudio(nivelEstudioInstance[0]);
+
+    // Asociar la respuesta con la encuesta
+    await encuesta.addRespuesta(respuesta);
+
+    res.status(201).json({ message: 'Respuestas almacenadas con éxito' });
+  } catch (error) {
+    console.error('Error al almacenar respuestas:', error);
+    res.status(500).json({ error: 'Error al procesar la solicitud' });
+  }
+}

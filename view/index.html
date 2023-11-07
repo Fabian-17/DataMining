@@ -14,133 +14,114 @@
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <h2 class="text-center btn-success font-weight-bold">Formulario - Cadena Software</h2>
-                <form class="text-center">
-
+                <form class="text-center" id="form">
                     <div class="form-group">
                         <label for="edad" class="text-warning">¿Cuál es tu Edad?</label>
-                        <input type="text" class="form-control" id="edad" placeholder="Ingrese su Edad" required>
+                        <input type="number" class="form-control" id="edad" name="edad" placeholder="Ingrese su Edad" required>
                     </div>
-
                     <div class="form-group">
-                        <label for="generos" class="text-warning">¿Con qué genero te identificas?</label>
-                        <select class="form-control" name="generos" id="generos">
-                            <option value="" hidden disabled-selected>Seleccione su Respuesta</option>
-                            <option value="opcion1">Masculino</option>
-                            <option value="opcion2">Femenino</option>
-                            <option value="opcion3">Otro</option>
+                        <label for="genero" class="text-warning">¿Con qué género te identificas?</label>
+                        <select class="form-control" name="genero" id="genero" required>
+                            <option value="" hidden disabled>Select su Respuesta</option>
+                            <option value="Masculino">Masculino</option>
+                            <option value="Femenino">Femenino</option>
+                            <option value="Otro">Otro</option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="localidades" class="text-warning">¿De que localidad eres?</label>
-                        <select class="form-control" name="localidades" id="localidades">
-                            <option value="" hidden disabled-selected>Seleccione su Respuesta</option>
-                            <option value="opcion1">Formosa</option>
-                            <option value="opcion2">Pilcomayo</option>
-                            <option value="opcion3">Patiño</option>
-                            <option value="opcion4">Matacos</option>
-                            <option value="opcion5">Pilagás</option>
-                            <option value="opcion6">Ramón Lista</option>
-                            <option value="opcion7">Bermejo</option>
-                            <option value="opcion8">Laishí</option>
-                            <option value="opcion9">Pirané</option>
+                        <label for="localidades" class="text-warning">¿De qué localidad eres?</label>
+                        <select class="form-control" name="localidades" id="localidades" required>
+                            <option value="" hidden disabled>Select su Respuesta</option>
+                            <option value="Formosa">Formosa</option>
+                            <option value="Pilcomayo">Pilcomayo</option>
+                            <option value="Patiño">Patiño</option>
+                            <option value="Matacos">Matacos</option>
+                            <option value="Pilagás">Pilagás</option>
+                            <option value="Ramón Lista">Ramón Lista</option>
+                            <option value="Bermejo">Bermejo</option>
+                            <option value="Laishí">Laishí</option>
+                            <option value="Pirané">Pirané</option>
                         </select>
                     </div>
-
-                    <div>
+                    <div class="form-group">
                         <label for="estudios" class="text-warning">¿Cuál es tu Nivel de Estudio?</label>
-                        <select class="form-control" name="estudios" id="estudios">
-                            <option value="" hidden disabled-selected>Seleccione su Respuesta</option>
-                            <option value="opcion1">Primaria</option>
-                            <option value="opcion2">Secundaria</option>
-                            <option value="opcion3">Terciaria</option>
-                            <option value="opcion2">Universidad</option>
+                        <select class="form-control" name="estudios" id="estudios" required>
+                            <option value="" hidden disabled>Select su Respuesta</option>
+                            <option value="Primaria">Primaria</option>
+                            <option value="Secundaria">Secundaria</option>
+                            <option value="Terciaria">Terciaria</option>
+                            <option value="Universidad">Universidad</option>
                         </select>
                     </div>
-
                     <div class="form-group">
                         <label for="artista" class="text-warning">¿Qué artista sueles escuchar más seguido?</label>
-                        <select class="form-control" id="artista" required>
-                            <option value="" hidden disabled-selected>Seleccione su Respuesta</option>
-                            <option value="opcion1">Bab Bunny</option>
-                            <option value="opcion2">Eminem</option>
-                            <option value="opcion3">Emilia Mernes</option>
-                            <option value="opcion2">Bizzarap</option>
-                            <option value="opcion3">Shakira</option>
+                        <select class="form-control" name="artista" id="artista" required>
+                            <option value="" hidden disabled>Select su Respuesta</option>
+                            <option value="Bad Bunny">Bad Bunny</option>
+                            <option value="Eminem">Eminem</option>
+                            <option value="Emilia Mernes">Emilia Mernes</option>
+                            <option value="Bizzarap">Bizzarap</option>
+                            <option value="Shakira">Shakira</option>
                         </select>
                     </div>
-
                     <div class="form-group">
-                        <label for="genero" class="text-warning">¿Cuál es tu género musical preferido?</label>
-                        <select class="form-control" id="genero" required>
-                            <option value="" hidden disabled-selected>Seleccione su Respuesta</option>
-                            <option value="opcion1">Bachata</option>
-                            <option value="opcion2">Electrónica</option>
-                            <option value="opcion3">House</option>
-                            <option value="opcion2">Folklore</option>
-                            <option value="opcion3">Rock</option>
+                        <label for="generoMusical" class="text-warning">¿Cuál es tu género musical preferido?</label>
+                        <select class="form-control" name="generoMusical" id="generoMusical" required>
+                            <option value="" hidden disabled>Select su Respuesta</option>
+                            <option value="Bachata">Bachata</option>
+                            <option value="Electrónica">Electrónica</option>
+                            <option value="House">House</option>
+                            <option value="Folklore">Folklore</option>
+                            <option value="Rock">Rock</option>
                         </select>
                     </div>
-
                     <div class="form-group">
-                        <label for="mejoras" class="text-warning">¿Cuál de estas opciones crees que podrían mejorar tu
-                            experiencia?</label>
-                        <select class="form-control" id="genero" required>
-                            <option value="" hidden disabled-selected>Seleccione su Respuesta</option>
-                            <option value="opcion1">Preguntas y Respuestas en vivo</option>
-                            <option value="opcion2">Entrevistas semanales</option>
-                            <option value="opcion3">Música en vivo</option>
-                            <option value="opcion2">Sorteos y Encuestas</option>
-                            <option value="opcion3">Salutaciones</option>
-                            <option value="opcion3">Noticias musicales</option>
-
+                        <label for="mejoras" class="text-warning">¿Cuál de estas opciones crees que podrían mejorar tu experiencia?</label>
+                        <select class="form-control" name="mejoras" id="mejoras" required>
+                            <option value="" hidden disabled>Select su Respuesta</option>
+                            <option value="Preguntas y Respuestas en vivo">Preguntas y Respuestas en vivo</option>
+                            <option value="Entrevistas semanales">Entrevistas semanales</option>
+                            <option value="Música en vivo">Música en vivo</option>
+                            <option value="Sorteos y Encuestas">Sorteos y Encuestas</option>
+                            <option value="Saludos">Saludos</option>
+                            <option value="Noticias musicales">Noticias musicales</option>
                         </select>
                     </div>
-
                     <div class="form-group">
-                        <label for="momentos" class="text-warning">¿Qué género musical prefieres escuchar mientras
-                            realizas tus tareas del día?</label>
-                        <select class="form-control" id="genero" required>
-                            <option value="" hidden disabled-selected>Seleccione su Respuesta</option>
-                            <option value="opcion1">Reggaeton</option>
-                            <option value="opcion2">K-pop</option>
-                            <option value="opcion3">Trap</option>
-                            <option value="opcion2">Rap</option>
-                            <option value="opcion3">Rock-Nacional</option>
+                        <label for="preferenciaMusical" class="text-warning">¿Qué género musical prefieres escuchar mientras realizas tus tareas del día?</label>
+                        <select class="form-control" name="preferenciaMusical" id="preferenciaMusical" required>
+                            <option value="" hidden disabled>Select su Respuesta</option>
+                            <option value="Reggaeton">Reggaeton</option>
+                            <option value="K-pop">K-pop</option>
+                            <option value="Trap">Trap</option>
+                            <option value="Rap">Rap</option>
+                            <option value="Rock-Nacional">Rock-Nacional</option>
                         </select>
                     </div>
-
                     <div class="form-group">
-                        <label for="horarios" class="text-warning">¿En qué horarios o momentos del día sueles escuchar
-                            la radio con más frecuencia?</label>
-                        <select class="form-control" id="horarios" required>
-                            <option value="" hidden disabled-selected>Seleccione su Respuesta</option>
-                            <option value="opcion1">Mañana</option>
-                            <option value="opcion2">Tarde</option>
-                            <option value="opcion3">Noche</option>
+                        <label for="horarios" class="text-warning">¿En qué horarios o momentos del día sueles escuchar la radio con más frecuencia?</label>
+                        <select class="form-control" name="horarios" id="horarios" required>
+                            <option value="" hidden disabled>Select su Respuesta</option>
+                            <option value="Mañana">Mañana</option>
+                            <option value="Tarde">Tarde</option>
+                            <option value="Noche">Noche</option>
                         </select>
                     </div>
-
                     <div class="form-group">
-                        <label for="frecuencia" class="text-warning">¿Escuchas la radio diariamente, semanalmente,
-                            raramente o varias veces a la semana?</label>
-                        <select class="form-control" id="frecuencia" required>
-                            <option value="" hidden disabled-selected>Seleccione su Respuesta</option>
-                            <option value="opcion1">Diariamente</option>
-                            <option value="opcion2">Semanalmente</option>
-                            <option value="opcion3">Varias veces a la semana</option>
+                        <label for="frecuencia" class="text-warning">¿Escuchas la radio diariamente, semanalmente, raramente o varias veces a la semana?</label>
+                        <select class="form-control" name="frecuencia" id="frecuencia" required>
+                            <option value="" hidden disabled>Select su Respuesta</option>
+                            <option value="Diariamente">Diariamente</option>
+                            <option value="Semanalmente">Semanalmente</option>
+                            <option value="Varias veces a la semana">Varias veces a la semana</option>
                         </select>
                     </div>
-                    
                     <div class="form-group">
-                        <label for="sugerencias" class="text-warning">¿Tienes alguna sugerencia para crear playlists
-                            temáticas que hagan que la experiencia sea más emocionante?</label>
-                        <input type="text" class="form-control" id="sugerencias" placeholder="Ingrese su respuesta..."
-                            required>
+                        <label for="sugerencias" class="text-warning">¿Tienes alguna sugerencia para crear playlists temáticas que hagan que la experiencia sea más emocionante?</label>
+                        <input type="text" class="form-control" name="sugerencias" id="sugerencias" placeholder="Ingrese su respuesta..." required>
                     </div>
                     <button type="submit" class="btn btn-success btn-lg font-weight-bold">Enviar Respuestas</button>
                 </form>
-
-
             </div>
         </div>
     </div>
@@ -150,6 +131,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="/js/form.js"></script>
 </body>
 
 </html>
