@@ -10,11 +10,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const localidades = document.querySelector("#localidades").value;
     const estudios = document.querySelector("#estudios").value;
     const artista = document.querySelector("#artista").value;
-    const genero = document.querySelector("#genero").value;
+    const generoMusical = document.querySelector("#generoMusical").value;
     const mejoras = document.querySelector("#mejoras").value;
     const horarios = document.querySelector("#horarios").value;
     const frecuencia = document.querySelector("#frecuencia").value;
     const sugerencias = document.querySelector("#sugerencias").value;
+    const preferencia = document.querySelector("#preferencia").value;
 
     // Construye un objeto con los datos del formulario
     const formData = {
@@ -23,8 +24,9 @@ document.addEventListener("DOMContentLoaded", function () {
       localidades,
       estudios,
       artista,
-      genero,
+      generoMusical,
       mejoras,
+      preferencia,
       horarios,
       frecuencia,
       sugerencias,

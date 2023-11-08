@@ -9,7 +9,8 @@ export async function guardarRespuestas(req, res) {
       estudios,
       artista,
       mejoras,
-      generoMusical,  // Corregir el nombre de la variable
+      generoMusical,
+      preferencia,  
       horarios,
       frecuencia,
       sugerencias,
@@ -18,7 +19,7 @@ export async function guardarRespuestas(req, res) {
     const encuesta = await Encuesta.create({ edad });
 
     // Para las entidades Genero, Localidad y NivelEstudio, primero debes buscar si ya existen en la base de datos y luego asociarlas con la encuesta
-    const generoInstance = await Genero.findOrCreate({ where: { nombre: genero } });
+    const generoInstance = await Genero.findOrCreate({ where: { nombre: generoMusical } });
     const localidadInstance = await Localidad.findOrCreate({ where: { nombre: localidades } });
     const nivelEstudioInstance = await NivelEstudio.findOrCreate({ where: { nombre: estudios } });
 
@@ -30,6 +31,7 @@ export async function guardarRespuestas(req, res) {
       4: horarios,  // Corregir el número de propiedad
       5: frecuencia,
       6: sugerencias,
+      7: preferencia
     });
 
     // Asociar las instancias de Genero, Localidad y NivelEstudio con la encuesta
