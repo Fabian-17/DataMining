@@ -1,4 +1,5 @@
 import express from 'express';
+import cors from 'cors';
 import encuestaRouter from './src/routes/encuestaRouter.js';
 import { fileURLToPath } from 'url';
 import path from 'path';
@@ -12,7 +13,7 @@ const port = process.env.PORT || 3000;
 import { connetToDB } from './src/config/db.js';
 
 app.use(express.json());
-
+app.use(cors());
 
 // Configurar el motor de vistas EJS
 app.set('view engine', 'ejs');
