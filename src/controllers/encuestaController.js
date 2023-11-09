@@ -28,10 +28,10 @@ export async function guardarRespuestas(req, res) {
       1: artista,
       2: generoMusical,
       3: mejoras,
-      4: horarios,  // Corregir el número de propiedad
-      5: frecuencia,
-      6: sugerencias,
-      7: preferencia
+      4: preferencia,
+      5: horarios,
+      6: frecuencia,
+      7: sugerencias
     });
 
     // Asociar las instancias de Genero, Localidad y NivelEstudio con la encuesta
