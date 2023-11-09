@@ -69,7 +69,10 @@ export const Genero = sequelize.define('genero', {
   NivelEstudio.hasMany(Encuesta);
   Encuesta.belongsTo(Genero);
   Encuesta.belongsTo(Localidad);
-  Encuesta.belongsTo(NivelEstudio);
+  Encuesta.belongsTo(NivelEstudio, {
+    as: 'nivelEstudio',
+    foreignKey: 'nivelEstudioId',
+  });
   
   Encuesta.hasMany(RespuestaEncuesta);
   RespuestaEncuesta.belongsTo(Encuesta);
@@ -79,3 +82,6 @@ export const Genero = sequelize.define('genero', {
   
   Respuesta.hasMany(RespuestaEncuesta);
   RespuestaEncuesta.belongsTo(Respuesta);
+
+Encuesta.hasMany(Respuesta);
+Respuesta.belongsTo(Encuesta);

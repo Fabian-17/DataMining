@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Obtén los valores de los campos del formulario
     const edad = document.querySelector("#edad").value;
-    const generos = document.querySelector("#genero").value;
+    const genero = document.querySelector("#genero").value;
     const localidades = document.querySelector("#localidades").value;
     const estudios = document.querySelector("#estudios").value;
     const artista = document.querySelector("#artista").value;
@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Construye un objeto con los datos del formulario
     const formData = {
       edad,
-      generos,
+      genero,
       localidades,
       estudios,
       artista,
@@ -43,13 +43,16 @@ document.addEventListener("DOMContentLoaded", function () {
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
-        // Puedes hacer algo después de que los datos se hayan almacenado, como mostrar un mensaje al usuario
-        alert("Datos enviados con éxito.");
-        form.reset(); // Limpia el formulario
-      })
+        Swal.fire({
+          icon: 'success',  // Puedes cambiar 'success' por 'error', 'warning', 'info', etc. para diferentes estilos de notificación
+          title: 'Datos enviados con éxito',
+          text: '¡Tus datos han sido enviados correctamente!',
+        }).then(() => {
+          form.reset(); // Limpia el formulario
+        })
       .catch((error) => {
         console.error("Error al enviar datos:", error);
         alert("Error al enviar datos. Por favor, inténtalo de nuevo.");
       });
   });
-});
+})});

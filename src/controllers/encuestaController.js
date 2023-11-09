@@ -19,7 +19,7 @@ export async function guardarRespuestas(req, res) {
     const encuesta = await Encuesta.create({ edad });
 
     // Para las entidades Genero, Localidad y NivelEstudio, primero debes buscar si ya existen en la base de datos y luego asociarlas con la encuesta
-    const generoInstance = await Genero.findOrCreate({ where: { nombre: generoMusical } });
+    const generoInstance = await Genero.findOrCreate({ where: { nombre: genero } });
     const localidadInstance = await Localidad.findOrCreate({ where: { nombre: localidades } });
     const nivelEstudioInstance = await NivelEstudio.findOrCreate({ where: { nombre: estudios } });
 
